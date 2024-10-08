@@ -41,6 +41,7 @@ header {
     background-color: var(--branding-color-red);
 }
 
+/* 스크롤 동작 시 고정할 헤더 영역. */
 .bottomfix {
     width: 100%;
     height: 43px;
@@ -50,6 +51,10 @@ header {
     align-items: center;
     position: relative;
 }
+
+
+
+/*768px 미만 환경 헤더  default : display:none;*/
 .header-768px {
     width: 100%;
     height: 70px;
@@ -73,6 +78,9 @@ header {
     color: var(--branding-color-white);
     font-size: 1.6em;
 }
+
+
+/* default 헤더 */
 .header-container {
     width: var(--container-width);
     height: 100%;
@@ -184,7 +192,7 @@ header {
 }
 
 
-/* 헤더 큰 메뉴  */
+/* 메뉴  */
 .headermenu{
     width: 100%;
     height: 240px;
@@ -449,12 +457,6 @@ main {
     background-image: url(../img/gridbgr/white-viewmore.jpg);
 }
 
-.thinkpaditem, .thinkbookitem, .ideapaditem {
-    background-repeat: no-repeat;
-    background-size: cover;
-    cursor: pointer;
-}
-
 .thinkpaditem img, .thinkbookitem img, .ideapaditem img {
     width: 10vw;
 }
@@ -468,6 +470,8 @@ main {
     padding-bottom: 16px;
     color: var(--branding-color-gray);
 }
+
+/* 각 상품들 */
 .thinkpaditem, .thinkbookitem, .ideapaditem {
     background-color: var(--branding-color-red);
     border-radius: 50px;
@@ -475,8 +479,13 @@ main {
     align-items: center;
     justify-content: center;
     position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+    cursor: pointer;
 }
 
+
+/* viewmore */
 #thinkpadviewmore {
     position: static;
     font-size: 1.6em;
@@ -484,9 +493,16 @@ main {
     padding: 0;
 }
 
+.thinkpaditem:hover, .thinkbookitem:hover, .ideapaditem:hover, .others-inner .item:hover{
+    filter:contrast(0.7);
+}
 
 
-/* Thinkbook 영역 */
+
+
+
+
+/* Thinkbook 영역(grid-container 2) ============================*/
 .thinkbook-container, .ideapad-container {
     width: 100%;
     margin: 200px 0;
@@ -501,10 +517,6 @@ main {
     background-image: url(../img/gridbgr/red1.jpg);
     filter: saturate(100%);
     transition: filter 1s;
-}
-
-.thinkbook1:hover {
-    filter: saturate(120%);
 }
 
 .thinkbook2 {
@@ -549,6 +561,7 @@ main {
     font-size: 1.6em;
     font-weight: 100;
 }
+
 
 
 /* Ideapad 영역 */
@@ -631,6 +644,7 @@ main {
     background-size: cover;
     background-repeat: no-repeat;
     border-radius: 26px;
+    cursor: pointer;
 }
 
 .others-inner .item > img {
@@ -648,6 +662,9 @@ main {
 }
 
 
+
+
+/* Footer =========================================== */
 footer {
     width: 100%;
     padding: 4vw 0;
@@ -687,22 +704,58 @@ footer p {
 
 
 
-.footer-inner .footertextlf {
+.footer-inner .footerInnerLeft .footertextlf {
+    width: 80%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    height: 100%;
 }
+
+
 .ftextbtm {
     display: flex;
     flex-direction: column;
     gap: 0.4em;
 }
+
+.ftexttop {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
 .ftexttop img{
     width: 150px;
-    margin-bottom: 8px;
+}
+.ftexttop p {
+    padding-top: 16px;
 }
 
+
+
+/* footer arrow-up 위 화살표 */
+.bx-chevron-up::before {
+    display: none;
+}
+.bx-chevron-up {
+    display: none;
+    color: var(--branding-color-white);
+    font-size: 1.4  em;
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 20px 20px;
+    cursor: pointer;
+}
+
+
+
+
+/* width ~ 1440px */
 @media (max-width: 1440px) {
+    .swiper {
+        height: 45vh;
+    }
     .contentswrap {
         height: 30vh;
         grid-template-columns: repeat(5, minmax(100px, 120px));
@@ -732,7 +785,7 @@ footer p {
     }
 
     .thinkpaditem img, .thinkbookitem img, .ideapaditem img{
-        width: 10vw;
+        width: 14vw;
     }
     .thinkbookitem:nth-child(1) > img {
         width: 10vw;
@@ -752,23 +805,61 @@ footer p {
     .ideapaditem img {
         width: 12vw;
     }
-    .footer-inner {
-        width: 95%;
-        padding: 0;
-        align-items: center;
-        flex-wrap: wrap;
-        flex-direction: column-reverse;
-    }
+
     .leftmenu {
         display: none;
     } 
     .menuInnerText {
         margin: 0 auto;
     }
+
+    footer {
+        padding: 26px 0;
+    }
+    .footer-inner .footertextlf {
+        justify-content: flex-start;
+        width: 100vw;
+}
+    .footer-inner {
+        font-size: clamp(0.8rem, 1vw , 1rem);
+        width: 100%;
+        flex-direction: column-reverse;
+        align-items: center;
+        padding: 0;
+    }
+    .footerInnerLeft{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        padding-top: 12px;
+    }
+    .ftexttop {
+        width: 100%;
+        align-items: center;
+        text-align: center;
+    }
+    .ftextbtm {
+        width: 100%;
+        align-items: center;
+        padding-top: 8px;
+    }
+    .ftexttop img{
+        width: 100px;
+    }
+    .ftexttop p {
+        padding: 0;
+    }
     
 }
 
+
+
+
+/* width ~ 768px */
 @media (max-width: 768px) {
+    .swiper {
+        height: 35vh;
+    }
     .contentswrap {
         height: 110vh;
         grid-template-columns: repeat(2, minmax(180px, 200px));
@@ -833,6 +924,9 @@ footer p {
     .others-inner .item > img {
         width: 12vw;
     }
+    .thinkbookitem img {
+        width: 18vw;
+    }
     .ideapaditem img {
         width: 16vw;
     }
@@ -845,8 +939,21 @@ footer p {
     .bottomfix {
         display: none;
     }
+    .ftexttop img{
+        width: 80px;
+    }
+
+    footer {
+        position: relative;
+    }
+    .bx-chevron-up::before {
+        display: block;
+    }
 }
 
+
+
+/* width ~ 400px */
 @media (max-width: 400px) {
     .contentswrap {
         height: 65vh;
@@ -857,11 +964,16 @@ footer p {
         min-width: 73vw;
 
     }
+    .thinkbookitem img, .ideapaditem img {
+        width: 20vw;
+    }
 }
 
 
 
-/* JS용 클래스 */
+
+
+/* JS이벤트 클래스 */
 .headerfix {
     position: fixed;
     top: 0;
@@ -876,6 +988,9 @@ footer p {
 .menuhide {
     display: none;
 }
+
+
+/* css-animation */
 @keyframes openmenu {
     0% {
         opacity: 0;
