@@ -10,6 +10,7 @@
     --branding-color-red : #e3140c;
     --branding-color-gray : #5c5c5c;
     --container-width : 73%; /* 1400px */
+    /* --container-width-percentage : 98%; */
 }
 
 
@@ -76,13 +77,14 @@ header {
 
 .nav-768px i {
     color: var(--branding-color-white);
-    font-size: 1.6em;
+    font-size: 1.6rem;
 }
 
 
 /* default 헤더 */
 .header-container {
-    width: var(--container-width);
+    max-width: var(--container-width);
+    width: var(--container-width-percentage);
     height: 100%;
     margin: 0 auto;
     display: flex;
@@ -105,10 +107,10 @@ header {
 .headertop-textwrap {
     display: flex;
     align-items: center;
-    gap: 2em;
+    gap: 2rem;
 }
 .headertop-textwrap span {
-    font-size: clamp(0.6em, 1vw, 0.8em);
+    font-size: clamp(0.6rem, 1vw, 0.8rem);
 }
 .headertop-textwrap div i {
     margin-left: 0.2em;
@@ -119,13 +121,13 @@ header {
 /* 헤더 우상단 */
 .header-container .header-top .top-right-headertop {
     color: var(--branding-color-white);
-    font-size: 1.6em;
+    font-size: 1.6rem;
 }
 
 .headertop-iconwrap {
     display: flex;
     align-items: center;
-    gap: 0.5em;
+    gap: 0.5rem;
 }
 
 
@@ -156,8 +158,8 @@ header {
     display: flex;
     align-items: center;
     color: var(--branding-color-white);
-    font-size: clamp(0.7rem, 1vw, 0.8rem);
-    gap: 1.6em;
+    font-size: clamp(0.7rem, 1vw, 0.9rem);
+    gap: 1.6rem;
 }
 
 .header-b-textwrap a span {
@@ -186,9 +188,9 @@ header {
     color: var(--branding-color-gray);
     position: absolute;
     top: 50%;
-    right: 0.4em;
+    right: 0.4rem;
     transform: translateY(-50%);
-    font-size: 1.4em;
+    font-size: 1.4rem;
 }
 
 
@@ -266,6 +268,10 @@ header {
     height: 70vh;
 }
 
+.bannerimgwrap{
+    width: 100%;
+}
+
 .bannerimgwrap img {
     width: 100%;
     height: 100%;
@@ -292,7 +298,7 @@ header {
     justify-content: center;
 }
 .contentscontainer h1 {
-    font-size: clamp(1rem, 4vw, 1.6em);
+    font-size: clamp(1rem, 4vw, 1.6rem);
     margin-bottom: 48px;
 }
 .contentswrap {
@@ -312,7 +318,7 @@ header {
     height: 100%;
     margin: 0 auto;
     background-color: var(--branding-color-red);
-    border-radius: 1.4em;
+    border-radius: 1.4rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -325,8 +331,7 @@ header {
     display: none;
     font-weight: 600;
     color: var(--branding-color-red);
-    font-size: 0.8em;
-    transform: .3s;
+    font-size: 0.9rem;
     opacity: 0;
     font-family: "Raleway", sans-serif;
 }
@@ -398,7 +403,7 @@ header {
 .thinkpad-title, .thinkbook-title, .ideapad-title{
     display: flex;
     align-items: flex-end;
-    gap: 2em;
+    gap: 2rem;
     margin-bottom: 52px;
 }
 .thinkpad-title > span , .thinkbook-title span, .ideapad-title span{
@@ -457,6 +462,7 @@ header {
 .thinkpaditem p, .thinkbookitem p, .ideapaditem p {
     position: absolute;
     font-family: "Raleway", sans-serif;
+    font-size: clamp(0.8rem, 2vw, 1.2rem);
     font-weight: 400;
     bottom: 0;
     text-align: center;
@@ -481,7 +487,7 @@ header {
 /* viewmore */
 #thinkpadviewmore {
     position: static;
-    font-size: 1.6em;
+    font-size: 1.6rem;
     font-weight: 100;
     padding: 0;
 }
@@ -534,15 +540,8 @@ header {
     background-image: url(../img/gridbgr/redviewmore.jpg);
 }
 
-
 .thinkbookitem:nth-child(1) > img{
-    width: 14vw;
-}
-.thinkbookitem:nth-child(3) > img{
-    width: 10vw;
-}
-.thinkbookitem:nth-child(4) > img{
-    width: 10vw;
+    width: 300px;
 }
 .thinkbookitem p {
     color: var(--branding-color-white);
@@ -551,7 +550,7 @@ header {
 .thinkbook5 p {
     position: static;
     padding: 0;
-    font-size: 1.6em;
+    font-size: 1.6rem;
     font-weight: 100;
 }
 
@@ -608,7 +607,7 @@ header {
     position: static;
     padding: none;
     font-weight: 100;
-    font-size: 1.6em;
+    font-size: 1.6rem;
 }
 
 
@@ -624,7 +623,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 1.2em;
+    gap: 1.2rem;
 }
 
 .others-inner .item {
@@ -641,9 +640,12 @@ header {
 }
 
 .others-inner .item > img {
-    width: 8vw;
+    width: 120px;
 }
 
+.others-inner .item:nth-child(2) > img {
+    width: 160px;
+}
 .others-inner .item:nth-child(1){
     background-image: url(../img/gridbgr/gray1.jpg);
 }
@@ -666,7 +668,7 @@ footer {
 
 footer p {
     color: var(--branding-color-white);
-    font-size: 0.8em;
+    font-size: 0.8rem;
 }
 
 
@@ -679,20 +681,20 @@ footer p {
 
 .footertextrg {
     display: flex;
-    gap: 4em;
+    gap: 4rem;
     margin-left: 1vw;
 }
 
 .footertextrg div h1 {
     color: var(--branding-color-white);
-    font-size: 1.1em;
+    font-size: 1.1rem;
     margin-bottom: 8px;
 }
 
 .footertextrg div {
     display: flex;
     flex-direction: column;
-    gap: 0.2em;
+    gap: 0.2rem;
 }
 
 
@@ -709,7 +711,7 @@ footer p {
 .ftextbtm {
     display: flex;
     flex-direction: column;
-    gap: 0.4em;
+    gap: 0.4rem;
 }
 
 .ftexttop {
@@ -733,7 +735,7 @@ footer p {
 .bx-chevron-up {
     display: none;
     color: var(--branding-color-white);
-    font-size: 1.4  em;
+    font-size: 1.4rem;
     position: absolute;
     right: 0;
     top: 0;
@@ -778,10 +780,10 @@ footer p {
     }
 
     .thinkpaditem img, .thinkbookitem img, .ideapaditem img{
-        width: 14vw;
+        width: 150px;
     }
-    .thinkbookitem:nth-child(1) > img {
-        width: 10vw;
+    .thinkbookitem:nth-child(1) > img{
+        width: 150px;
     }
     .thinkpad7 {
         grid-column: 1 / 3 ;
@@ -794,9 +796,6 @@ footer p {
     .others-inner .item {
         min-width: 33%;
         max-height: 250px;
-    }
-    .ideapaditem img {
-        width: 12vw;
     }
 
     .leftmenu {
@@ -914,15 +913,16 @@ footer p {
         background-repeat: no-repeat;
         border-radius: 26px;
     }
+    .thinkpaditem img, .thinkbookitem img, .ideapaditem img{
+        width: 150px;
+    }
+    .thinkbookitem:nth-child(1) > img {
+        width: 150px;
+    }
     .others-inner .item > img {
-        width: 12vw;
+        width: 100px;
     }
-    .thinkbookitem img {
-        width: 18vw;
-    }
-    .ideapaditem img {
-        width: 16vw;
-    }
+
     .footertextrg{
         display: none;
     }
@@ -960,11 +960,21 @@ footer p {
     .thinkbookitem img, .ideapaditem img {
         width: 20vw;
     }
+    .thinkbookitem:nth-child(1) > img{
+        width: 20vw;
+    }
 }
 
 
 
-
+@media (max-width : 320px){
+    .thinkpaditem img, .thinkbookitem img, .ideapaditem img{
+        width: 120px;
+    }
+    .thinkbookitem:nth-child(1) > img {
+        width: 120px;
+    }
+}
 
 /* JS이벤트 클래스 */
 .headerfix {

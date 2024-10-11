@@ -33,11 +33,9 @@ window.addEventListener('DOMContentLoaded', function() {
     function fixHeaderOff(fixedheader){
         fixedheader.classList.remove("headerfix");
     }
-    function showmenu(){
-        menu.classList.add("menushow");
-    } 
-    function hidemenu() {
-        menu.classList.remove("menushow");
+    function menuOnOff(){
+        if(menu.classList.contains("menushow")){menu.classList.remove("menushow");}
+        else{menu.classList.add("menushow");}
     }
     window.addEventListener("scroll", () => {
             let scrollAmount = window.scrollY;
@@ -55,6 +53,6 @@ window.addEventListener('DOMContentLoaded', function() {
         });
 
         headermenubtn.addEventListener("click", togglemenu);
-        headermenubtn.addEventListener("mouseover", showmenu);
-        header.addEventListener("mouseleave",  hidemenu);
+        headermenubtn.addEventListener("mouseover", menuOnOff);
+        header.addEventListener("mouseleave",  menuOnOff);
 })
